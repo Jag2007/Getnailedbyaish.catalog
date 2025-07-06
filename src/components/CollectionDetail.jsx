@@ -6,17 +6,18 @@ export default function CollectionDetail() {
     .split("-")
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(" ");
+
   return (
-    <section className="max-w-4xl mx-auto py-10 px-2 text-center">
-      <h2 className="text-3xl font-extrabold text-[#e10053] mb-4">
+    <section className="max-w-4xl mx-auto py-16 px-4 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#e10053] mb-4">
         {displayName} Collection
       </h2>
-      <p className="text-[#c3547d] mb-8">40 unique styles coming soon!</p>
+      <p className="text-[#c3547d] text-lg mb-8">Coming soon!</p>
       <Link
         to="/"
-        className="px-4 py-2 bg-[#b93d6a] text-[#f8d4e6] rounded-lg font-semibold shadow hover:bg-[#c3547d] transition-colors"
+        className="px-6 py-3 bg-[#e10053] text-white rounded-lg font-semibold shadow hover:bg-[#c3547d] transition-colors"
       >
-        Back to Collections
+        Back to Home
       </Link>
     </section>
   );
