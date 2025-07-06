@@ -1,9 +1,32 @@
-import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useCallback } from "react";
 import logo from "/images/Subject.png";
 import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Helper to navigate and scroll to a section
+  const goToSection = useCallback(
+    (sectionId) => {
+      if (location.pathname !== "/") {
+        navigate("/", { replace: false });
+        // Wait for navigation to complete, then scroll
+        setTimeout(() => {
+          const el = document.getElementById(sectionId);
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        }, 100); // 100ms delay to allow page to render
+      } else {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }
+    },
+    [navigate, location.pathname]
+  );
+
   return (
     <nav className="flex justify-between items-center p-4 bg-white shadow-md sticky top-0 z-50">
       <div className="flex items-center gap-2">
@@ -19,19 +42,25 @@ export default function Navbar() {
       {/* Desktop Nav */}
       <ul className="hidden md:flex gap-6 font-regular text-[#c3547d] text-base md:text-lg">
         <li>
-          <a href="#" className="hover:underline">
+          <button className="hover:underline" onClick={() => navigate("/")}>
             Home
-          </a>
+          </button>
         </li>
         <li>
-          <a href="#categories" className="hover:underline">
+          <button
+            className="hover:underline"
+            onClick={() => goToSection("categories")}
+          >
             Categories
-          </a>
+          </button>
         </li>
         <li>
-          <a href="#contact" className="hover:underline">
+          <button
+            className="hover:underline"
+            onClick={() => goToSection("contact")}
+          >
             Contact
-          </a>
+          </button>
         </li>
       </ul>
       {/* Mobile Hamburger */}
@@ -45,27 +74,33 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {open && (
         <div className="absolute top-16 left-0 w-full bg-white shadow-lg flex flex-col items-center gap-4 py-6 z-50 md:hidden animate-fade-in">
-          <a
-            href="#"
+          <button
             className="text-[#c3547d] text-lg"
-            onClick={() => setOpen(false)}
+            onClick={() => {
+              setOpen(false);
+              navigate("/");
+            }}
           >
             Home
-          </a>
-          <a
-            href="#categories"
+          </button>
+          <button
             className="text-[#c3547d] text-lg"
-            onClick={() => setOpen(false)}
+            onClick={() => {
+              setOpen(false);
+              goToSection("categories");
+            }}
           >
             Categories
-          </a>
-          <a
-            href="#contact"
+          </button>
+          <button
             className="text-[#c3547d] text-lg"
-            onClick={() => setOpen(false)}
+            onClick={() => {
+              setOpen(false);
+              goToSection("contact");
+            }}
           >
             Contact
-          </a>
+          </button>
         </div>
       )}
     </nav>
