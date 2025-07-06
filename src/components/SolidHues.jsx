@@ -17,7 +17,7 @@ export default function SolidHues({ preview = false, onViewAll }) {
   const displayDesigns = preview ? designs.slice(0, 4) : designs;
 
   return (
-    <section className="w-full max-w-8xl mx-auto rounded-3xl shadow-xl py-10 px-6 border border-pink-200 bg-[#fff0f6]">
+    <section className="w-full max-w-7xl mx-auto rounded-3xl shadow-xl py-10 px-6 border border-pink-200 bg-[#fff0f6]">
       {/* Header */}
       <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
         <div>
