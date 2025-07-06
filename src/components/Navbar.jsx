@@ -1,6 +1,6 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useCallback } from "react";
-import logo from "/images/Subject.png";
+import logo from "../Images/Subject.png";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
