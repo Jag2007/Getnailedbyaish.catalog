@@ -25,8 +25,8 @@ export default function SolidHues({ preview = false, onViewAll }) {
             Solid Hues
           </h2>
           <p className="text-[#e10053] mt-1 text-lg">
-            Classic and elegant French tip nail designs that never go out of
-            style.
+            Solid perfection in every detail. Handmade, reusable press-on nails
+            for a flawless, long-lasting look.
           </p>
         </div>
         <button
