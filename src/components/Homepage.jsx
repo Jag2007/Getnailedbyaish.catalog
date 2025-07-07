@@ -6,6 +6,8 @@ import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
 import HeroSection from "./HeroSection";
 import Background from "../Images/background.jpeg";
+import CasualChic from "./CasualChic";
+
 export default function HomePage() {
   const navigate = useNavigate();
 
@@ -26,6 +28,10 @@ export default function HomePage() {
         <section className="pt-16 md:pt-20 pb-16" id="categories">
           {/* You can pass a prop to SolidHues to only show a preview if you want */}
           <SolidHues preview onViewAll={() => navigate("/category1")} />
+        </section>
+        {/* CasualChic Preview */}
+        <section className="pt-0 md:pt-0 pb-16" id="casualchic">
+          <CasualChic preview onViewAll={() => navigate("/category2")} />
         </section>
 
         {/* Reviews */}
