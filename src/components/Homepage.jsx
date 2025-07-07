@@ -5,13 +5,13 @@ import ReviewSection from "./ReviewSection";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
 import HeroSection from "./HeroSection";
-import Background from "../Images/Background.jpeg";
+import Background from "../Images/background.jpeg";
 export default function HomePage() {
   const navigate = useNavigate();
 
   return (
     <div
-      className="min-h-screen bg-[url('../Images/Background.jpeg')] bg-cover bg-center text-[#e28dac] flex flex-col"
+      className="min-h-screen bg-[url('../Images/background.jpeg')] bg-cover bg-center text-[#e28dac] flex flex-col"
       style={{
         backgroundImage: `url(${Background})`,
         backgroundRepeat: "repeat",
