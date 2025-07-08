@@ -1,15 +1,15 @@
 import { useNavigate } from "react-router-dom";
 
-import cherryRed from "../Images/Cherry red.249_-.1.png";
-import softPink from "../Images/Soft Pink.249_-.2.png";
-import mochaBrown from "../Images/Mocha Brown.249_-.3.png";
-import dustyBeige from "../Images/Dusty Beige.249_-.4.png";
+import blushBowAndPearl from "../Bow Bubbly/blush bow and pearl.579_-.127.png";
+import iridescentBows from "../Bow Bubbly/iridescent bows.599_-.134.png";
+import loveAndLiteBow from "../Bow Bubbly/love and lite bow.599_-.138.png";
+import softRibbonFrench from "../Bow Bubbly/soft ribbon french.599_-.117.png";
 
 const designs = [
-  { label: "Cherry Red", src: cherryRed },
-  { label: "Soft Pink", src: softPink },
-  { label: "Mocha Brown", src: mochaBrown },
-  { label: "Dusty Beige", src: dustyBeige },
+  { label: "Blush Bow and Pearl", price: 579, src: blushBowAndPearl },
+  { label: "Iridescent Bows", price: 599, src: iridescentBows },
+  { label: "Love and Lite Bow", price: 599, src: loveAndLiteBow },
+  { label: "Soft Ribbon French", price: 599, src: softRibbonFrench },
 ];
 
 export default function SolidHues({ preview = false, onViewAll }) {
@@ -22,7 +22,7 @@ export default function SolidHues({ preview = false, onViewAll }) {
       <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
         <div>
           <h2 className="text-3xl md:text-4xl font-bold text-[#b6004c]">
-            Simple Solids
+            Bow Bubbly
           </h2>
           <p className="text-[#e10053] mt-1 text-lg">
             Solid perfection in every detail. Handmade, reusable press-on nails
@@ -30,7 +30,7 @@ export default function SolidHues({ preview = false, onViewAll }) {
           </p>
         </div>
         <button
-          onClick={onViewAll ? onViewAll : () => navigate("/category1")}
+          onClick={onViewAll ? onViewAll : () => navigate("/category3")}
           className="bg-gradient-to-r from-[#e10053] to-[#ff5e8e] text-white px-6 py-2 rounded-full font-semibold shadow-md hover:brightness-110 transition-all text-sm md:text-base cursor-pointer"
         >
           View All →

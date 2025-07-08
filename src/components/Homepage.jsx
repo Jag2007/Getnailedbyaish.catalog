@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import HeroSection from "./HeroSection";
 import Background from "../Images/background.jpeg";
 import CasualChic from "./CasualChic";
+import BowBubbly from "./BowBubbly";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -32,6 +33,10 @@ export default function HomePage() {
         {/* CasualChic Preview */}
         <section className="pt-0 md:pt-0 pb-16" id="casualchic">
           <CasualChic preview onViewAll={() => navigate("/category2")} />
+        </section>
+        {/* BowBubbly Preview */}
+        <section className="pt-0 md:pt-0 pb-16" id="bowbubbly">
+          <BowBubbly preview onViewAll={() => navigate("/category3")} />
         </section>
 
         {/* Reviews */}
