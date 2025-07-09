@@ -111,6 +111,7 @@ const designs = [
 const sortedDesigns = designs.sort((a, b) => a.price - b.price);
 
 export default function CasualChic50() {
+  const category = "Casual Chic";
   return (
     <div className="bg-[#fff0f6] min-h-screen flex flex-col">
       <Navbar />
@@ -140,10 +141,14 @@ export default function CasualChic50() {
                 {item.label}
               </p>
               <a
-                href="https://ig.me/m/get.nailedbyaish"
+                href={`https://api.whatsapp.com/send?phone=6283449420&text=Hey! I love the '${
+                  item.label
+                }' from the ${category} collection${
+                  item.price ? ` (₹${item.price})` : ""
+                }. Can I get more details about it?`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 bg-gradient-to-r from-[#e10053] to-[#ff5e8e] text-white px-6 py-3 font-semibold shadow hover:brightness-110 transition-all text-base md:text-lg"
+                className="mt-2 bg-gradient-to-r from-[#e10053] to-[#ff5e8e] text-white px-8 py-3 font-semibold shadow hover:brightness-110 transition-all text-lg"
                 style={{ borderRadius: "10px" }}
               >
                 DM to Order
