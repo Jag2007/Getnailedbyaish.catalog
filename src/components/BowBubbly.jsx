@@ -40,9 +40,7 @@ export default function SolidHues({ preview = false, onViewAll }) {
       </div>
 
       {/* Grid of Nail Designs */}
-      <div
-        className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6`}
-      >
+      <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6`}>
         {displayDesigns.map((item, i) => (
           <div key={i} className="flex flex-col items-center text-center">
             <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-md border border-pink-100 hover:scale-105 transition-transform duration-300">
