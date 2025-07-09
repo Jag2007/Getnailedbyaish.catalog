@@ -27,7 +27,12 @@ export default function HomePage() {
       <div className="absolute inset-0 bg-white/70 z-0" />
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar />
+        {/* Announcement Bar */}
+        <div className="w-full bg-[#e10053] text-white text-sm md:text-base font-semibold py-2 text-center shadow-sm">
+          Luxe Luxury and Bold Bling Launching Soon !!!
+        </div>
         <HeroSection />
+
         <main className="flex-grow px-2 sm:px-4 md:px-8">
           {/* SolidHues Preview */}
           <section className="pt-10 md:pt-20 pb-10 md:pb-16">
