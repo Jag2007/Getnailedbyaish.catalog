@@ -49,7 +49,7 @@ export default function Navbar() {
         <li>
           <button
             className="hover:underline"
-            onClick={() => goToSection("categories")}
+            onClick={() => navigate("/collections")}
           >
             Collections
           </button>
@@ -95,10 +95,10 @@ export default function Navbar() {
             className="text-[#c3547d] text-lg"
             onClick={() => {
               setOpen(false);
-              goToSection("categories");
+              navigate("/collections");
             }}
           >
-            Categories
+            Collections
           </button>
           <button
             className="text-[#c3547d] text-lg"
