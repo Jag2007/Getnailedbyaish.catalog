@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import img7368 from "../review/IMG_7368.png";
 import img7361 from "../review/IMG_7361.png";
@@ -24,17 +24,34 @@ const reviewImages = [
   img7379,
 ];
 
+function getVisibleCount() {
+  if (typeof window !== "undefined" && window.innerWidth >= 768) {
+    return 4;
+  }
+  return 2;
+}
+
 export default function ReviewSection() {
-  // Track which pair of images is visible
-  const [pairIndex, setPairIndex] = useState(0);
-  const totalPairs = Math.ceil(reviewImages.length / 2);
+  const [visibleCount, setVisibleCount] = useState(getVisibleCount());
+  const [startIndex, setStartIndex] = useState(0);
 
-  const nextPair = () => setPairIndex((prev) => (prev + 1) % totalPairs);
-  const prevPair = () =>
-    setPairIndex((prev) => (prev - 1 + totalPairs) % totalPairs);
+  useEffect(() => {
+    const handleResize = () => setVisibleCount(getVisibleCount());
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-  // Get the current pair of images
-  const visibleImages = reviewImages.slice(pairIndex * 2, pairIndex * 2 + 2);
+  const total = reviewImages.length;
+
+  const next = () => setStartIndex((prev) => (prev + visibleCount) % total);
+  const prev = () =>
+    setStartIndex((prev) => (prev - visibleCount + total) % total);
+
+  // Get the visible images, wrap around if needed
+  let visibleImages = [];
+  for (let i = 0; i < visibleCount; i++) {
+    visibleImages.push(reviewImages[(startIndex + i) % total]);
+  }
 
   return (
     <section className="py-16 px-4 bg-[#fff0f6]">
@@ -46,16 +63,18 @@ export default function ReviewSection() {
           Real photos from our happy clients ✨
         </p>
       </div>
-      {/* Review Images 2-at-a-time Carousel */}
+      {/* Review Images Responsive Carousel */}
       <div className="flex items-center justify-center gap-2 md:gap-4 mb-8">
         <button
           aria-label="Previous reviews"
-          onClick={prevPair}
+          onClick={prev}
           className="p-2 rounded-full bg-white border-2 border-[#f8d4e6] text-[#e10053] hover:bg-[#f8d4e6] transition-colors shadow-md"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
-        <div className="grid grid-cols-2 gap-4 w-full max-w-2xl mx-auto">
+        <div
+          className={`grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-2xl mx-auto`}
+        >
           {visibleImages.map((src, idx) => (
             <div
               key={idx}
@@ -63,7 +82,7 @@ export default function ReviewSection() {
             >
               <img
                 src={src}
-                alt={`Client review ${pairIndex * 2 + idx + 1}`}
+                alt={`Client review ${((startIndex + idx) % total) + 1}`}
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -72,7 +91,7 @@ export default function ReviewSection() {
         </div>
         <button
           aria-label="Next reviews"
-          onClick={nextPair}
+          onClick={next}
           className="p-2 rounded-full bg-white border-2 border-[#f8d4e6] text-[#e10053] hover:bg-[#f8d4e6] transition-colors shadow-md"
         >
           <ChevronRight className="w-6 h-6" />
