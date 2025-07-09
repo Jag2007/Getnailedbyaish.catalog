@@ -1,37 +1,27 @@
 import { useState, useEffect, useRef } from "react";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import img7368 from "../review/IMG_7368.png";
+import img7361 from "../review/IMG_7361.png";
+import img7370 from "../review/IMG_7370.png";
+import img7371 from "../review/IMG_7371.png";
+import img7373 from "../review/IMG_7373.png";
+import img7374 from "../review/IMG_7374.png";
+import img7375 from "../review/IMG_7375.png";
+import img7376 from "../review/IMG_7376.png";
+import img7377 from "../review/IMG_7377.png";
+import img7379 from "../review/IMG_7379.png";
 
-const reviews = [
-  {
-    name: "Priya S.",
-    text: "Absolutely loved my custom set! The attention to detail and creativity is unmatched. Highly recommend Get Nailed by Aish!",
-    rating: 5,
-  },
-  {
-    name: "Megha R.",
-    text: "The designs are so classy and cute. My nails have never looked better. Will definitely be coming back!",
-    rating: 5,
-  },
-  {
-    name: "Aarav T.",
-    text: "Professional service and beautiful results. Booking was easy and the experience was wonderful.",
-    rating: 5,
-  },
-  {
-    name: "Simran K.",
-    text: "Aish is so talented! My nails were exactly how I imagined. The baby pink ombré was stunning.",
-    rating: 5,
-  },
-  {
-    name: "Riya M.",
-    text: "Super hygienic and friendly service. The nail art lasted for weeks and I got so many compliments!",
-    rating: 5,
-  },
-  {
-    name: "Divya P.",
-    text: "Loved the custom designs and the attention to detail. The deep pink shades are my new favorite!",
-    rating: 5,
-  },
+const reviewImages = [
+  img7368,
+  img7361,
+  img7370,
+  img7371,
+  img7373,
+  img7374,
+  img7375,
+  img7376,
+  img7377,
+  img7379,
 ];
 
 export default function ReviewSection() {
@@ -45,13 +35,15 @@ export default function ReviewSection() {
   const [visibleCount, setVisibleCount] = useState(getVisibleCount());
   const intervalRef = useRef();
 
-  // Helper to move carousel
+  // Carousel navigation
   const move = (dir) => {
     setStart((prev) => {
       if (dir === "left") {
-        return (prev - visibleCount + reviews.length) % reviews.length;
+        return (
+          (prev - visibleCount + reviewImages.length) % reviewImages.length
+        );
       } else {
-        return (prev + visibleCount) % reviews.length;
+        return (prev + visibleCount) % reviewImages.length;
       }
     });
   };
@@ -60,11 +52,11 @@ export default function ReviewSection() {
   useEffect(() => {
     const resetInterval = () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
-      intervalRef.current = setInterval(() => move("right"), 3000);
+      intervalRef.current = setInterval(() => move("right"), 3500);
     };
     resetInterval();
     return () => clearInterval(intervalRef.current);
-  }, [start]);
+  }, [start, visibleCount]);
 
   useEffect(() => {
     const handleResize = () => setVisibleCount(getVisibleCount());
@@ -73,22 +65,25 @@ export default function ReviewSection() {
   }, []);
 
   // Handle wrap-around for the carousel
-  const visibleReviews =
-    start + visibleCount <= reviews.length
-      ? reviews.slice(start, start + visibleCount)
+  const visibleImages =
+    start + visibleCount <= reviewImages.length
+      ? reviewImages.slice(start, start + visibleCount)
       : [
-          ...reviews.slice(start),
-          ...reviews.slice(0, (start + visibleCount) % reviews.length),
+          ...reviewImages.slice(start),
+          ...reviewImages.slice(
+            0,
+            (start + visibleCount) % reviewImages.length
+          ),
         ];
 
   return (
     <section className="py-16 px-4 bg-[#fff0f6]">
       <div className="max-w-4xl mx-auto text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-extrabold text-[#e10053] mb-2 drop-shadow-sm">
-          What Our Clients Say
+          Client Spotlight
         </h2>
         <p className="text-[#c3547d] text-lg">
-          Real reviews from our happy customers ✨
+          Real photos from our happy clients ✨
         </p>
       </div>
       <div className="flex items-center justify-center gap-2 md:gap-4">
@@ -100,28 +95,16 @@ export default function ReviewSection() {
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
-        {/* Reviews */}
+        {/* Review Images */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 justify-center items-stretch transition-all duration-500 min-h-[320px] w-full max-w-6xl">
-          {visibleReviews.map((review, idx) => (
-            <div
+          {visibleImages.map((src, idx) => (
+            <img
               key={idx}
-              className="bg-white rounded-3xl shadow-lg p-6 flex-1 flex flex-col items-center border border-[#e7b2c6] min-w-[220px] max-w-xs mx-auto"
-            >
-              <div className="flex gap-1 mb-2">
-                {[...Array(review.rating)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-5 h-5 text-[#e10053] fill-[#e10053]"
-                  />
-                ))}
-              </div>
-              <p className="text-[#c3547d] italic mb-4 text-center">
-                "{review.text}"
-              </p>
-              <span className="font-semibold text-[#e10053]">
-                - {review.name}
-              </span>
-            </div>
+              src={src}
+              alt={`Client review ${idx + 1}`}
+              className="min-w-[220px] max-w-xs w-full h-72 object-cover border-4 border-pink-300 rounded-2xl mx-auto"
+              loading="lazy"
+            />
           ))}
         </div>
         {/* Right Arrow */}
@@ -132,6 +115,25 @@ export default function ReviewSection() {
         >
           <ChevronRight className="w-6 h-6" />
         </button>
+      </div>
+      {/* Instagram Link Section */}
+      <div className="mt-10 flex flex-col items-center">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
+          <p className="text-[#b6004c] text-lg md:text-xl font-semibold text-center sm:text-left">
+            Want to know what our clients say about our custom press-ons?
+          </p>
+          <button
+            onClick={() =>
+              window.open(
+                "https://www.instagram.com/stories/highlights/18201119428307476/",
+                "_blank"
+              )
+            }
+            className="px-5 py-2 bg-gradient-to-r from-[#e10053] to-[#ff5e8e] text-white rounded-full font-semibold shadow hover:brightness-110 transition-all text-sm"
+          >
+            See
+          </button>
+        </div>
       </div>
     </section>
   );
