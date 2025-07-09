@@ -1,20 +1,22 @@
 import { useNavigate } from "react-router-dom";
 
-import cherryRed from "../Images/Cherry red.249_-.1.png";
-import softPink from "../Images/Soft Pink.249_-.2.png";
-import mochaBrown from "../Images/Mocha Brown.249_-.3.png";
-import dustyBeige from "../Images/Dusty Beige.249_-.4.png";
+// 🔮 Cateye Preview Images (you can swap out any 4)
+import champagneGaze from "../Cateye Canvas/champagne gaze.499_-.105.png";
+import burgundyBow from "../Cateye Canvas/burgundy bow cateye.599_-.112.png";
+import cosmicCurves from "../Cateye Canvas/cosmic curves.699_-.103.png";
+import glidedPearl from "../Cateye Canvas/glided pearl cateye.749_-.108.png";
 
 const designs = [
-  { label: "Cherry Red", src: cherryRed },
-  { label: "Soft Pink", src: softPink },
-  { label: "Mocha Brown", src: mochaBrown },
-  { label: "Dusty Beige", src: dustyBeige },
+  { label: "Champagne Gaze", src: champagneGaze },
+  { label: "Burgundy Bow", src: burgundyBow },
+  { label: "Cosmic Curves", src: cosmicCurves },
+  { label: "Glided Pearl", src: glidedPearl },
 ];
 
-export default function SolidHues({ preview = false, onViewAll }) {
+export default function CateyeCanvasPreview({ preview = true, onViewAll }) {
   const navigate = useNavigate();
   const displayDesigns = preview ? designs.slice(0, 4) : designs;
+  const category = "Cateye Canvas";
 
   return (
     <section className="w-full max-w-[105rem] mx-auto rounded-3xl shadow-xl py-12 px-8 border border-pink-200 bg-[#fff0f6]">
@@ -22,15 +24,15 @@ export default function SolidHues({ preview = false, onViewAll }) {
       <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
         <div>
           <h2 className="text-3xl md:text-4xl font-bold text-[#b6004c]">
-            Simple Solids
+            Cateye Canvas
           </h2>
           <p className="text-[#e10053] mt-1 text-lg">
-            Solid perfection in every detail. Handmade, reusable press-on nails
-            for a flawless, long-lasting look.
+            Get lost in the trending Cat Eye👁️magic spell🧙! These nails boast a
+            magnetic shimmer, beautifully🥀reflecting every ray of light✨
           </p>
         </div>
         <button
-          onClick={onViewAll ? onViewAll : () => navigate("/category1")}
+          onClick={onViewAll ? onViewAll : () => navigate("/cateye-canvas")}
           className="bg-gradient-to-r from-[#e10053] to-[#ff5e8e] text-white px-6 py-2 rounded-full font-semibold shadow-md hover:brightness-110 transition-all text-sm md:text-base cursor-pointer"
         >
           View All →
@@ -51,6 +53,15 @@ export default function SolidHues({ preview = false, onViewAll }) {
             <p className="mt-2 text-pink-600 font-medium text-sm md:text-base">
               {item.label}
             </p>
+            <a
+              href={`https://api.whatsapp.com/send?phone=6283449420&text=Hey! I love the '${item.label}' from the ${category} collection. Can I get more details about it?`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 w-full md:w-auto bg-gradient-to-r from-[#e10053] to-[#ff5e8e] text-white px-4 py-2 md:px-8 md:py-3 font-semibold shadow hover:brightness-110 transition-all text-sm md:text-lg"
+              style={{ borderRadius: "10px" }}
+            >
+              DM to Order
+            </a>
           </div>
         ))}
       </div>

@@ -1,7 +1,5 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
-// 🖼 Imports from Bow Bubbly folder
 import formalBow from "../Bow Bubbly/formal bow.329_-.114.png";
 import bowTifulNude from "../Bow Bubbly/bow-tiful nude.329_-.126.png";
 import dottedBowCharm from "../Bow Bubbly/dotted bow charm.379_-.115.png";

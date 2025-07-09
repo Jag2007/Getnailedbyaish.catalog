@@ -1,14 +1,14 @@
 import React from "react";
 import Navbar from "./Navbar";
 import SolidHues from "./SolidHues";
+import CasualChic from "./CasualChic";
+import BowBubbly from "./BowBubbly";
+import CateyeCanvasPreview from "./CateyeCanvas";
 import ReviewSection from "./ReviewSection";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
 import HeroSection from "./HeroSection";
 import Background from "../Images/background.jpeg";
-import CasualChic from "./CasualChic";
-import BowBubbly from "./BowBubbly";
-
 export default function HomePage() {
   const navigate = useNavigate();
 
@@ -31,14 +31,20 @@ export default function HomePage() {
           <SolidHues preview onViewAll={() => navigate("/category1")} />
         </section>
         {/* CasualChic Preview */}
-        <section className="pt-0 md:pt-0 pb-16" id="casualchic">
+        <section className="pb-16 md:pb-20">
           <CasualChic preview onViewAll={() => navigate("/category2")} />
         </section>
         {/* BowBubbly Preview */}
-        <section className="pt-0 md:pt-0 pb-16" id="bowbubbly">
+        <section className="pb-16 md:pb-20">
           <BowBubbly preview onViewAll={() => navigate("/category3")} />
         </section>
-
+        {/* CateyeCanvas Preview */}
+        <section className="pb-16 md:pb-20">
+          <CateyeCanvasPreview
+            preview
+            onViewAll={() => navigate("/category4")}
+          />
+        </section>
         {/* Reviews */}
         <section className="pb-16 md:pb-20">
           <ReviewSection />

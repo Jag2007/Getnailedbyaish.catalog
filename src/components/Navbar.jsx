@@ -51,7 +51,7 @@ export default function Navbar() {
             className="hover:underline"
             onClick={() => goToSection("categories")}
           >
-            Categories
+            Collections
           </button>
         </li>
         <li>
