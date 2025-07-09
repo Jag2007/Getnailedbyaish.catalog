@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import img7368 from "../review/IMG_7368.png";
 import img7361 from "../review/IMG_7361.png";
@@ -25,56 +25,16 @@ const reviewImages = [
 ];
 
 export default function ReviewSection() {
-  const [start, setStart] = useState(0);
-  const getVisibleCount = () => {
-    if (window.innerWidth < 640) return 1;
-    if (window.innerWidth < 900) return 2;
-    if (window.innerWidth < 1200) return 3;
-    return 4;
-  };
-  const [visibleCount, setVisibleCount] = useState(getVisibleCount());
-  const intervalRef = useRef();
+  // Track which pair of images is visible
+  const [pairIndex, setPairIndex] = useState(0);
+  const totalPairs = Math.ceil(reviewImages.length / 2);
 
-  // Carousel navigation
-  const move = (dir) => {
-    setStart((prev) => {
-      if (dir === "left") {
-        return (
-          (prev - visibleCount + reviewImages.length) % reviewImages.length
-        );
-      } else {
-        return (prev + visibleCount) % reviewImages.length;
-      }
-    });
-  };
+  const nextPair = () => setPairIndex((prev) => (prev + 1) % totalPairs);
+  const prevPair = () =>
+    setPairIndex((prev) => (prev - 1 + totalPairs) % totalPairs);
 
-  // Auto-scroll with reset on manual navigation
-  useEffect(() => {
-    const resetInterval = () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-      intervalRef.current = setInterval(() => move("right"), 3500);
-    };
-    resetInterval();
-    return () => clearInterval(intervalRef.current);
-  }, [start, visibleCount]);
-
-  useEffect(() => {
-    const handleResize = () => setVisibleCount(getVisibleCount());
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Handle wrap-around for the carousel
-  const visibleImages =
-    start + visibleCount <= reviewImages.length
-      ? reviewImages.slice(start, start + visibleCount)
-      : [
-          ...reviewImages.slice(start),
-          ...reviewImages.slice(
-            0,
-            (start + visibleCount) % reviewImages.length
-          ),
-        ];
+  // Get the current pair of images
+  const visibleImages = reviewImages.slice(pairIndex * 2, pairIndex * 2 + 2);
 
   return (
     <section className="py-16 px-4 bg-[#fff0f6]">
@@ -86,31 +46,33 @@ export default function ReviewSection() {
           Real photos from our happy clients ✨
         </p>
       </div>
-      <div className="flex items-center justify-center gap-2 md:gap-4">
-        {/* Left Arrow */}
+      {/* Review Images 2-at-a-time Carousel */}
+      <div className="flex items-center justify-center gap-2 md:gap-4 mb-8">
         <button
           aria-label="Previous reviews"
-          onClick={() => move("left")}
+          onClick={prevPair}
           className="p-2 rounded-full bg-white border-2 border-[#f8d4e6] text-[#e10053] hover:bg-[#f8d4e6] transition-colors shadow-md"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
-        {/* Review Images */}
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 justify-center items-stretch transition-all duration-500 min-h-[320px] w-full max-w-6xl">
+        <div className="grid grid-cols-2 gap-4 w-full max-w-2xl mx-auto">
           {visibleImages.map((src, idx) => (
-            <img
+            <div
               key={idx}
-              src={src}
-              alt={`Client review ${idx + 1}`}
-              className="min-w-[220px] max-w-xs w-full h-72 object-cover border-4 border-pink-300 rounded-2xl mx-auto"
-              loading="lazy"
-            />
+              className="w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-md border border-pink-200 bg-white mx-auto flex items-center justify-center"
+            >
+              <img
+                src={src}
+                alt={`Client review ${pairIndex * 2 + idx + 1}`}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
           ))}
         </div>
-        {/* Right Arrow */}
         <button
           aria-label="Next reviews"
-          onClick={() => move("right")}
+          onClick={nextPair}
           className="p-2 rounded-full bg-white border-2 border-[#f8d4e6] text-[#e10053] hover:bg-[#f8d4e6] transition-colors shadow-md"
         >
           <ChevronRight className="w-6 h-6" />
