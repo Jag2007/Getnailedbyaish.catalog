@@ -1,31 +1,11 @@
-import { useNavigate, useLocation } from "react-router-dom";
-import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import logo from "../Images/Subject.png";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation();
-
-  // Helper to navigate and scroll to a section
-  const goToSection = useCallback(
-    (sectionId) => {
-      if (location.pathname !== "/") {
-        navigate("/", { replace: false });
-        // Wait for navigation to complete, then scroll
-        setTimeout(() => {
-          const el = document.getElementById(sectionId);
-          if (el) el.scrollIntoView({ behavior: "smooth" });
-        }, 100); // 100ms delay to allow page to render
-      } else {
-        const el = document.getElementById(sectionId);
-        if (el) el.scrollIntoView({ behavior: "smooth" });
-      }
-    },
-    [navigate, location.pathname]
-  );
 
   return (
     <nav className="flex flex-wrap justify-between items-center p-2 sm:p-4 bg-white shadow-md sticky top-0 z-50">
@@ -65,9 +45,9 @@ export default function Navbar() {
         <li>
           <button
             className="hover:underline"
-            onClick={() => goToSection("contact")}
+            onClick={() => navigate("/about")}
           >
-            Contact
+            About Me
           </button>
         </li>
       </ul>
@@ -113,10 +93,10 @@ export default function Navbar() {
             className="text-[#c3547d] text-lg"
             onClick={() => {
               setOpen(false);
-              goToSection("contact");
+              navigate("/about");
             }}
           >
-            Contact
+            About Me
           </button>
         </div>
       )}

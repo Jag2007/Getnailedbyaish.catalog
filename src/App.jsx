@@ -9,6 +9,7 @@ import Category5 from "./pages/Category5";
 import CollectionDetail from "./components/CollectionDetail";
 import Howto from "./pages/Howto";
 import Collections from "./pages/Collections";
+import About from "./pages/About";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/category5" element={<Category5 />} />
         <Route path="/howto" element={<Howto />} />
         <Route path="/collections" element={<Collections />} />
+        <Route path="/about" element={<About />} />
         <Route
           path="/collections/:collectionName"
           element={<CollectionDetail />}
