@@ -28,19 +28,19 @@ export default function Navbar() {
   );
 
   return (
-    <nav className="flex justify-between items-center p-4 bg-white shadow-md sticky top-0 z-50">
-      <div className="flex items-center gap-2">
+    <nav className="flex flex-wrap justify-between items-center p-2 sm:p-4 bg-white shadow-md sticky top-0 z-50">
+      <div className="flex items-center gap-1 sm:gap-2">
         <img
           src={logo}
           alt="Logo"
-          className="h-10 w-10 rounded-full border-2 border-[#e7b2c6]"
+          className="h-8 w-8 sm:h-10 sm:w-10 rounded-full border-2 border-[#e7b2c6]"
         />
-        <span className="text-[#e10053] font-bold text-lg md:text-xl">
+        <span className="text-[#e10053] font-bold text-base sm:text-lg md:text-xl">
           get.nailedbyaish
         </span>
       </div>
       {/* Desktop Nav */}
-      <ul className="hidden md:flex gap-6 font-regular text-[#c3547d] text-base md:text-lg">
+      <ul className="hidden md:flex gap-3 sm:gap-6 font-regular text-[#c3547d] text-sm sm:text-base md:text-lg">
         <li>
           <button className="hover:underline" onClick={() => navigate("/")}>
             Home
@@ -52,6 +52,14 @@ export default function Navbar() {
             onClick={() => goToSection("categories")}
           >
             Collections
+          </button>
+        </li>
+        <li>
+          <button
+            className="hover:underline"
+            onClick={() => navigate("/howto")}
+          >
+            How to ?
           </button>
         </li>
         <li>
@@ -91,6 +99,15 @@ export default function Navbar() {
             }}
           >
             Categories
+          </button>
+          <button
+            className="text-[#c3547d] text-lg"
+            onClick={() => {
+              setOpen(false);
+              navigate("/howto");
+            }}
+          >
+            How to ?
           </button>
           <button
             className="text-[#c3547d] text-lg"

@@ -4,11 +4,11 @@ import logo from "../Images/Subject.png";
 export default function Footer() {
   return (
     <footer
-      className="py-10 md:py-20 shadow-inner"
+      className="py-8 md:py-10 lg:py-20 shadow-inner"
       id="contact"
       style={{ backgroundColor: "#fff", color: "#c3547d" }}
     >
-      <div className="max-w-7xl mx-auto px-2 flex flex-col md:flex-row md:justify-between md:items-start space-y-6 md:space-y-0">
+      <div className="max-w-7xl mx-auto px-2 flex flex-col md:flex-row md:justify-between md:items-start space-y-4 md:space-y-0 md:space-x-8">
         <div className="flex flex-col items-center md:items-start">
           <img
             src={logo}
@@ -19,6 +19,7 @@ export default function Footer() {
           <h1 className="text-base md:text-lg font-bold tracking-wide text-[#e10053]">
             get.nailedbyaish
           </h1>
+          <p>Created. Designed. Delivered. — Jagruthi Pulumati 💅🌸</p>
         </div>
 
         <div className="flex flex-col items-center md:items-end space-y-2">
