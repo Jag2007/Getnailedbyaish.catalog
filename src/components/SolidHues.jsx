@@ -17,7 +17,7 @@ export default function SolidHues({ preview = false, onViewAll }) {
   const displayDesigns = preview ? designs.slice(0, 4) : designs;
 
   return (
-    <section className="w-full max-w-7xl mx-auto rounded-3xl shadow-xl py-10 px-6 border border-pink-200 bg-[#fff0f6]">
+    <section className="w-full max-w-[105rem] mx-auto rounded-3xl shadow-xl py-12 px-8 border border-pink-200 bg-[#fff0f6]">
       {/* Header */}
       <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
         <div>
@@ -51,6 +51,15 @@ export default function SolidHues({ preview = false, onViewAll }) {
             <p className="mt-2 text-pink-600 font-medium text-sm md:text-base">
               {item.label}
             </p>
+            <a
+              href="https://ig.me/m/get.nailedbyaish"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 bg-gradient-to-r from-[#e10053] to-[#ff5e8e] text-white px-6 py-3 font-semibold shadow hover:brightness-110 transition-all text-base md:text-lg"
+              style={{ borderRadius: "10px" }}
+            >
+              DM to Order
+            </a>
           </div>
         ))}
       </div>

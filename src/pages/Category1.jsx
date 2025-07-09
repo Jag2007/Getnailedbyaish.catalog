@@ -60,6 +60,15 @@ export default function SolidHues10() {
               <p className="mt-2 text-pink-600 font-medium text-sm md:text-base">
                 {item.label}
               </p>
+              <a
+                href="https://ig.me/m/get.nailedbyaish"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 bg-gradient-to-r from-[#e10053] to-[#ff5e8e] text-white px-6 py-3 font-semibold shadow hover:brightness-110 transition-all text-base md:text-lg"
+                style={{ borderRadius: "10px" }}
+              >
+                DM to Order
+              </a>
             </div>
           ))}
         </div>

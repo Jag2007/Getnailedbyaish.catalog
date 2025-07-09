@@ -114,8 +114,9 @@ export default function CasualChic50() {
   return (
     <div className="bg-[#fff0f6] min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-grow w-full max-w-7xl mx-auto rounded-3xl py-10 px-4 md:px-8">
-        <div className="flex items-center justify-between mb-10 flex-wrap gap-4">
+      <main className="flex-grow w-full max-w-8xl mx-auto rounded-3xl shadow-xl py-10 px-6 border border-pink-200 bg-[#fff0f6]">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#b6004c]">
               Casual Chic Collection 💅
@@ -125,28 +126,28 @@ export default function CasualChic50() {
             </p>
           </div>
         </div>
-
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {sortedDesigns.map((item, i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center text-center bg-white/60 backdrop-blur-md rounded-2xl p-2 shadow-md border border-pink-100 hover:scale-[1.03] transition-transform duration-300"
-            >
-              <div className="w-full aspect-[3/4] overflow-hidden rounded-xl">
+            <div key={i} className="flex flex-col items-center text-center">
+              <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-md border border-pink-100 hover:scale-105 transition-transform duration-300">
                 <img
                   src={item.src}
                   alt={item.label}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="mt-2 w-full flex justify-between items-center px-1">
-                <p className="text-pink-600 font-medium text-sm md:text-base truncate">
-                  {item.label}
-                </p>
-                <span className="text-[#b6004c] font-semibold text-sm md:text-base">
-                  ₹{item.price}
-                </span>
-              </div>
+              <p className="mt-2 text-pink-600 font-medium text-sm md:text-base">
+                {item.label}
+              </p>
+              <a
+                href="https://ig.me/m/get.nailedbyaish"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 bg-gradient-to-r from-[#e10053] to-[#ff5e8e] text-white px-6 py-3 font-semibold shadow hover:brightness-110 transition-all text-base md:text-lg"
+                style={{ borderRadius: "10px" }}
+              >
+                DM to Order
+              </a>
             </div>
           ))}
         </div>
