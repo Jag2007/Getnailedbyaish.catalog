@@ -95,6 +95,9 @@ export default function BowBubbly50() {
               <p className="mt-2 text-pink-600 font-medium text-sm md:text-base">
                 {item.label}
               </p>
+              <p className="text-[#b6004c] text-sm md:text-base font-semibold">
+                ₹{item.price}/-
+              </p>
               <a
                 href={`https://api.whatsapp.com/send?phone=6283449420&text=Hey! I love the '${
                   item.label

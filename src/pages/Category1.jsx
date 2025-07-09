@@ -60,6 +60,18 @@ export default function SolidHues10() {
               <p className="mt-2 text-pink-600 font-medium text-sm md:text-base">
                 {item.label}
               </p>
+              <p className="text-[#b6004c] text-sm md:text-base font-semibold">
+                ₹249/-
+              </p>
+              <a
+                href={`https://api.whatsapp.com/send?phone=6283449420&text=Hey! I love the '${item.label}' from the Solid Hues collection (₹249). Can I get more details about it?`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 w-full md:w-auto bg-gradient-to-r from-[#e10053] to-[#ff5e8e] text-white px-4 py-2 md:px-8 md:py-3 font-semibold shadow hover:brightness-110 transition-all text-sm md:text-lg"
+                style={{ borderRadius: "10px" }}
+              >
+                DM to Order
+              </a>
             </div>
           ))}
         </div>

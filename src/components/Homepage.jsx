@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
 import HeroSection from "./HeroSection";
 import Background from "../Images/background.jpeg";
+import MinimalMagicPreview from "./MinimalMagic";
 export default function HomePage() {
   const navigate = useNavigate();
 
@@ -43,6 +44,13 @@ export default function HomePage() {
           <CateyeCanvasPreview
             preview
             onViewAll={() => navigate("/category4")}
+          />
+        </section>
+        {/* MinimalMagic Preview */}
+        <section className="pb-16 md:pb-20">
+          <MinimalMagicPreview
+            preview
+            onViewAll={() => navigate("/category5")}
           />
         </section>
         {/* Reviews */}

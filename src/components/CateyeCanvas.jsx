@@ -7,10 +7,10 @@ import cosmicCurves from "../Cateye Canvas/cosmic curves.699_-.103.png";
 import glidedPearl from "../Cateye Canvas/glided pearl cateye.749_-.108.png";
 
 const designs = [
-  { label: "Champagne Gaze", src: champagneGaze },
-  { label: "Burgundy Bow", src: burgundyBow },
-  { label: "Cosmic Curves", src: cosmicCurves },
-  { label: "Glided Pearl", src: glidedPearl },
+  { label: "Champagne Gaze", price: 499, src: champagneGaze },
+  { label: "Burgundy Bow", price: 599, src: burgundyBow },
+  { label: "Cosmic Curves", price: 699, src: cosmicCurves },
+  { label: "Glided Pearl", price: 749, src: glidedPearl },
 ];
 
 export default function CateyeCanvasPreview({ preview = true, onViewAll }) {
@@ -52,6 +52,9 @@ export default function CateyeCanvasPreview({ preview = true, onViewAll }) {
             </div>
             <p className="mt-2 text-pink-600 font-medium text-sm md:text-base">
               {item.label}
+            </p>
+            <p className="text-[#b6004c] text-sm md:text-base font-semibold">
+              ₹{item.price}/-
             </p>
             <a
               href={`https://api.whatsapp.com/send?phone=6283449420&text=Hey! I love the '${item.label}' from the ${category} collection. Can I get more details about it?`}

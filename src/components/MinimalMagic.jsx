@@ -1,21 +1,22 @@
 import { useNavigate } from "react-router-dom";
 
-import blushBowAndPearl from "../Bow Bubbly/blush bow and pearl.579_-.127.png";
-import iridescentBows from "../Bow Bubbly/iridescent bows.599_-.134.png";
-import loveAndLiteBow from "../Bow Bubbly/love and lite bow.599_-.138.png";
-import softRibbonFrench from "../Bow Bubbly/soft ribbon french.599_-.117.png";
+// 💫 Minimal Magic Preview Images (4 handpicked)
+import bridalBow from "../Minimal Magic/bridal bow.529_-.87.png";
+import goldenFusion from "../Minimal Magic/golden fusion.499_-.86.png";
+import softSparkle from "../Minimal Magic/soft sparkle.499_-.78.png";
+import crystalTips from "../Minimal Magic/crystal tips.599_-.88.png";
 
 const designs = [
-  { label: "Blush Bow and Pearl", price: 579, src: blushBowAndPearl },
-  { label: "Iridescent Bows", price: 599, src: iridescentBows },
-  { label: "Love and Lite Bow", price: 599, src: loveAndLiteBow },
-  { label: "Soft Ribbon French", price: 599, src: softRibbonFrench },
+  { label: "Bridal Bow", price: 529, src: bridalBow },
+  { label: "Golden Fusion", price: 499, src: goldenFusion },
+  { label: "Soft Sparkle", price: 499, src: softSparkle },
+  { label: "Crystal Tips", price: 599, src: crystalTips },
 ];
 
-export default function SolidHues({ preview = false, onViewAll }) {
+export default function MinimalMagicPreview({ preview = true, onViewAll }) {
   const navigate = useNavigate();
   const displayDesigns = preview ? designs.slice(0, 4) : designs;
-  const category = "Bow Bubbly";
+  const category = "Minimal Magic";
 
   return (
     <section className="w-full max-w-[105rem] mx-auto rounded-3xl shadow-xl py-12 px-8 border border-pink-200 bg-[#fff0f6]">
@@ -23,16 +24,15 @@ export default function SolidHues({ preview = false, onViewAll }) {
       <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
         <div>
           <h2 className="text-3xl md:text-4xl font-bold text-[#b6004c]">
-            Bow Bubbly
+            Minimal Magic
           </h2>
           <p className="text-[#e10053] mt-1 text-lg">
-            Because every day deserves a girly pop vibe🌸and charm ⭐️! Our bow
-            press-on nails🎀 give you instant, pinky-perfect glam without the
-            salon fuss🤌🏻
+            Elegant, bridal, and radiant ✨ A soft-glam nail collection that
+            whispers luxury 🌸💍
           </p>
         </div>
         <button
-          onClick={onViewAll ? onViewAll : () => navigate("/category3")}
+          onClick={onViewAll ? onViewAll : () => navigate("/minimal-magic")}
           className="bg-gradient-to-r from-[#e10053] to-[#ff5e8e] text-white px-6 py-2 rounded-full font-semibold shadow-md hover:brightness-110 transition-all text-sm md:text-base cursor-pointer"
         >
           View All →
@@ -57,11 +57,7 @@ export default function SolidHues({ preview = false, onViewAll }) {
               ₹{item.price}/-
             </p>
             <a
-              href={`https://api.whatsapp.com/send?phone=6283449420&text=Hey! I love the '${
-                item.label
-              }' from the ${category} collection${
-                item.price ? ` (₹${item.price})` : ""
-              }. Can I get more details about it?`}
+              href={`https://api.whatsapp.com/send?phone=6283449420&text=Hey! I love the '${item.label}' from the ${category} collection. Can I get more details about it?`}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 w-full md:w-auto bg-gradient-to-r from-[#e10053] to-[#ff5e8e] text-white px-4 py-2 md:px-8 md:py-3 font-semibold shadow hover:brightness-110 transition-all text-sm md:text-lg"

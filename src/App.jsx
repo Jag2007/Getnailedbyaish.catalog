@@ -5,6 +5,7 @@ import Category1 from "./pages/Category1";
 import Category2 from "./pages/Category2";
 import Category3 from "./pages/Category3";
 import Category4 from "./pages/Category4";
+import Category5 from "./pages/Category5";
 import CollectionDetail from "./components/CollectionDetail";
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/category2" element={<Category2 />} />
         <Route path="/category3" element={<Category3 />} />
         <Route path="/category4" element={<Category4 />} />
+        <Route path="/category5" element={<Category5 />} />
         <Route
           path="/collections/:collectionName"
           element={<CollectionDetail />}
