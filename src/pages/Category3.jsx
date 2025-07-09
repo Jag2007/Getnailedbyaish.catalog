@@ -105,7 +105,7 @@ export default function BowBubbly50() {
                 }. Can I get more details about it?`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 bg-gradient-to-r from-[#e10053] to-[#ff5e8e] text-white px-8 py-3 font-semibold shadow hover:brightness-110 transition-all text-lg"
+                className="mt-2 w-full md:w-auto bg-gradient-to-r from-[#e10053] to-[#ff5e8e] text-white px-4 py-2 md:px-8 md:py-3 font-semibold shadow hover:brightness-110 transition-all text-sm md:text-lg"
                 style={{ borderRadius: "10px" }}
               >
                 DM to Order
