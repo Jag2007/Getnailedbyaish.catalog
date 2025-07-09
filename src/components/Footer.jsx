@@ -9,7 +9,7 @@ export default function Footer() {
       style={{ backgroundColor: "#fff", color: "#c3547d" }}
     >
       <div className="max-w-7xl mx-auto px-2 flex flex-col md:flex-row md:justify-between md:items-start space-y-4 md:space-y-0 md:space-x-8">
-        <div className="flex flex-col items-center md:items-start">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <img
             src={logo}
             alt="Logo"
@@ -19,7 +19,11 @@ export default function Footer() {
           <h1 className="text-base md:text-lg font-bold tracking-wide text-[#e10053]">
             get.nailedbyaish
           </h1>
-          <p>Created. Designed. Delivered. — Jagruthi Pulumati 💅🌸</p>
+          <p className="text-xs sm:text-sm md:text-base mt-1 md:mt-2 text-[#c3547d] max-w-xs md:max-w-none">
+            Dreamt with love by Aish Arora 🌙💭
+            <br className="hidden sm:block" />
+            Brought to life with heart and code by Jagruthi Pulumati 💻💖
+          </p>
         </div>
 
         <div className="flex flex-col items-center md:items-end space-y-2">
