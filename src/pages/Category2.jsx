@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import PressOnInfoBox from "../components/PressOnInfoBox";
 
 // 💅 All 50+ imports from Casual Chic folder
 import babyPinkFrenchies from "../Casual Chic/Baby pink Frenchies.429_-.30.png";
@@ -160,6 +161,7 @@ export default function CasualChic50() {
           ))}
         </div>
       </main>
+      <PressOnInfoBox />
       <Footer />
     </div>
   );

@@ -1,4 +1,4 @@
-import { Instagram, Phone } from "lucide-react";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import logo from "../Images/Subject.png";
 
 export default function Footer() {
@@ -9,6 +9,7 @@ export default function Footer() {
       style={{ backgroundColor: "#fff", color: "#c3547d" }}
     >
       <div className="max-w-7xl mx-auto px-2 flex flex-col md:flex-row md:justify-between md:items-start space-y-4 md:space-y-0 md:space-x-8">
+        {/* Left Section */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <img
             src={logo}
@@ -26,9 +27,10 @@ export default function Footer() {
           </p>
         </div>
 
+        {/* Right Section */}
         <div className="flex flex-col items-center md:items-end space-y-2">
           <div className="flex items-center gap-2">
-            <Instagram className="w-5 h-5" style={{ color: "#c3547d" }} />
+            <FaInstagram className="w-5 h-5" style={{ color: "#c3547d" }} />
             <a
               href="https://www.instagram.com/get.nailedbyaish/"
               target="_blank"
@@ -40,7 +42,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-2">
-            <Phone className="w-5 h-5" style={{ color: "#c3547d" }} />
+            <FaWhatsapp className="w-5 h-5" style={{ color: "#25D366" }} />
             <a
               href="https://wa.me/6283449420"
               target="_blank"

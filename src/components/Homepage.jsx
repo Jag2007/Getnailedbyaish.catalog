@@ -27,9 +27,19 @@ export default function HomePage() {
       <div className="absolute inset-0 bg-white/70 z-0" />
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar />
-        {/* Announcement Bar */}
-        <div className="w-full bg-[#e10053] text-white text-sm md:text-base font-semibold py-2 text-center shadow-sm">
-          Luxe Luxury and Bold Bling Launching Soon !!!
+        {/* Announcement Bar - Scrolling Marquee */}
+        <div className="w-full bg-[#e10053] overflow-hidden py-2 relative">
+          <div className="whitespace-nowrap animate-marquee text-white text-sm md:text-base font-semibold flex items-center">
+            <span className="mx-8">
+              Luxe Luxury and Bold Bling Launching Soon !!!
+            </span>
+            <span className="mx-8">
+              Luxe Luxury and Bold Bling Launching Soon !!!
+            </span>
+            <span className="mx-8">
+              Luxe Luxury and Bold Bling Launching Soon !!!
+            </span>
+          </div>
         </div>
         <HeroSection />
 

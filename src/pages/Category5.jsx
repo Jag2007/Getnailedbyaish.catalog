@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import PressOnInfoBox from "../components/PressOnInfoBox";
 
 // 🌟 Minimal Magic Collection Images
 import bridalBow from "../Minimal Magic/bridal bow.529_-.87.png";
@@ -139,6 +140,7 @@ export default function MinimalMagic() {
           ))}
         </div>
       </main>
+      <PressOnInfoBox />
       <Footer />
     </div>
   );

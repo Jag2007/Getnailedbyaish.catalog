@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import PressOnInfoBox from "../components/PressOnInfoBox";
 
 // ✨ Cateye Canvas Collection Images
 import burgundyBow from "../Cateye Canvas/burgundy bow cateye.599_-.112.png";
@@ -79,6 +80,7 @@ export default function CateyeCanvas() {
           ))}
         </div>
       </main>
+      <PressOnInfoBox />
       <Footer />
     </div>
   );

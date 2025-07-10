@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import PressOnInfoBox from "../components/PressOnInfoBox";
 
 import cherryRed from "../Images/Cherry red.249_-.1.png";
 import softPink from "../Images/Soft Pink.249_-.2.png";
@@ -77,6 +78,8 @@ export default function SolidHues10() {
         </div>
       </main>
 
+      {/* Place PressOnInfoBox just before Footer */}
+      <PressOnInfoBox />
       {/* Footer */}
       <Footer />
     </div>
