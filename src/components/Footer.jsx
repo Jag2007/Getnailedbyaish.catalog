@@ -60,7 +60,7 @@ export default function Footer() {
             className="text-xs md:text-sm text-center md:text-right"
             style={{ color: "#c3547d" }}
           >
-            Professional Nail Art Services ✨ Book your custom set today!
+            Your Luxury Presson Nail Artist ✨ Book your custom set today!
           </p>
         </div>
       </div>

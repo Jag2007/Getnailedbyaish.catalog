@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import photo1 from "../Images/photo1.jpg";
+import photo2 from "../Images/photo2.jpg";
 
 export default function HowToPage() {
   return (
@@ -57,6 +59,18 @@ export default function HowToPage() {
               images are taken vertically from top for the coin for the best
               fit.
             </p>
+            <div className="flex flex-row justify-center items-center gap-2 mt-4">
+              <img
+                src={photo1}
+                alt="How to measure example 1"
+                className="w-1/2 max-w-[160px] rounded-xl border border-pink-200 object-cover"
+              />
+              <img
+                src={photo2}
+                alt="How to measure example 2"
+                className="w-1/2 max-w-[160px] rounded-xl border border-pink-200 object-cover"
+              />
+            </div>
           </div>
 
           {/* Quick Guide */}

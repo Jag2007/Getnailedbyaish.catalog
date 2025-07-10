@@ -5,9 +5,13 @@ export default function HeroSection() {
         className="absolute top-0 left-0 w-full h-full object-cover brightness-50 z-0"
         src="https://files.catbox.moe/ry9mkd.mp4"
         autoPlay
-        loop
         muted
+        defaultMuted
         playsInline
+        preload="auto"
+        onLoadedData={(e) => {
+          e.target.play();
+        }}
         onCanPlay={(e) => {
           e.target.playbackRate = 0.75;
         }}
