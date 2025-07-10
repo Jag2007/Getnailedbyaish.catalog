@@ -20,11 +20,14 @@ export default function Footer() {
           <h1 className="text-base md:text-lg font-bold tracking-wide text-[#e10053]">
             get.nailedbyaish
           </h1>
-          <p className="text-xs sm:text-sm md:text-base mt-1 md:mt-2 text-[#c3547d] max-w-xs md:max-w-none">
-            Dreamt with love by Aish Arora 🌙💭
-            <br className="hidden sm:block" />
-            Brought to life with heart and code by Jagruthi Pulumati 💻💖
-          </p>
+          <div className="flex flex-col items-center md:items-start mt-1 md:mt-2 text-[#c3547d] max-w-xs md:max-w-none">
+            <p className="text-xs sm:text-sm md:text-base">
+              Dreamt with love by Aish Arora 🌙💭
+            </p>
+            <p className="text-xs sm:text-sm md:text-base">
+              Brought to life with heart and code by Jagruthi Pulumati 💻💖
+            </p>
+          </div>
         </div>
 
         {/* Right Section */}
