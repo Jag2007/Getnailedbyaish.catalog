@@ -4,10 +4,10 @@ import Footer from "../components/Footer";
 
 const collections = [
   {
-    name: "Solid Hues",
+    name: "Simple Solids",
     path: "/category1",
     emoji: "🎨",
-    desc: "Classic, bold, and beautiful. Our Solid Hues collection features timeless single-tone press-ons for a flawless, long-lasting look.",
+    desc: "Classic, bold, and beautiful. Our Simple Solids collection features timeless single-tone press-ons for a flawless, long-lasting look.",
   },
   {
     name: "Casual Chic",

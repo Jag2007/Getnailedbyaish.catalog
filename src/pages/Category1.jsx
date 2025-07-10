@@ -71,11 +71,11 @@ export default function SolidHues10() {
         <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
           <div>
             <h2 className="text-xl md:text-3xl font-bold text-[#b6004c]">
-              Solid Hues Collection 💅 249/- only
+              Simple Solids Collection 🎨
             </h2>
             <p className="text-[#e10053] mt-1 text-xs md:text-lg">
-              Classic and elegant French tip nail designs that never go out of
-              style.
+              Solid perfection in every detail ✨ Handcrafted 🖌️ reusable
+              press-on nails 💅 for a flawless, long-lasting look ♾️💖🫶🏻
             </p>
           </div>
         </div>

@@ -58,8 +58,8 @@ export default function SolidHues({ preview = false, onViewAll }) {
             Simple Solids
           </h2>
           <p className="text-[#e10053] mt-1 text-xs md:text-lg">
-            Solid perfection in every detail. Handmade, reusable press-on nails
-            for a flawless, long-lasting look.
+            Solid perfection in every detail ✨ Handcrafted 🖌️ reusable press-on
+            nails 💅 for a flawless, long-lasting look ♾️💖🫶🏻
           </p>
         </div>
         <button
