@@ -1,9 +1,10 @@
+import heroVideo from "../assets/hero.mov";
 export default function HeroSection() {
   return (
     <section className="relative h-[60vh] md:h-[90vh] w-full overflow-hidden flex items-center justify-center text-center">
       <video
         className="absolute top-0 left-0 w-full h-full object-cover brightness-50 z-0"
-        src="https://files.catbox.moe/ry9mkd.mp4"
+        src={heroVideo}
         autoPlay
         muted
         defaultMuted
