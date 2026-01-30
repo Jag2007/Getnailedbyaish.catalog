@@ -6,10 +6,10 @@ import loveAndLiteBow from "../Bow Bubbly/love and lite bow.599_-.138.png";
 import softRibbonFrench from "../Bow Bubbly/soft ribbon french.599_-.117.png";
 
 const designs = [
-  { label: "Blush Bow and Pearl", price: 579, src: blushBowAndPearl },
-  { label: "Iridescent Bows", price: 599, src: iridescentBows },
-  { label: "Love and Lite Bow", price: 599, src: loveAndLiteBow },
-  { label: "Soft Ribbon French", price: 599, src: softRibbonFrench },
+  { label: "Blush Bow and Pearl", price: 679, src: blushBowAndPearl },
+  { label: "Iridescent Bows", price: 699, src: iridescentBows },
+  { label: "Love and Lite Bow", price: 699, src: loveAndLiteBow },
+  { label: "Soft Ribbon French", price: 699, src: softRibbonFrench },
 ];
 
 const BESTSELLERS = [
@@ -76,7 +76,7 @@ export default function SolidHues({ preview = false, onViewAll }) {
       <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6`}>
         {displayDesigns.map((item, i) => {
           const isBestseller = BESTSELLERS.includes(
-            item.label.trim().toLowerCase()
+            item.label.trim().toLowerCase(),
           );
           return (
             <div key={i} className="flex flex-col items-center text-center">

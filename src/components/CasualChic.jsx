@@ -6,10 +6,10 @@ import studdedPetals from "../Casual Chic/Studded Petals.599_-.58.png";
 import heartMeBlack from "../Casual Chic/Heart me Black.599_-27.png";
 
 const designs = [
-  { label: "Glided Blush", price: 549, src: glidedBlush },
-  { label: "Golden Outline", price: 499, src: goldenOutline },
-  { label: "Studded Petals", price: 599, src: studdedPetals },
-  { label: "Heart Me Black", price: 599, src: heartMeBlack },
+  { label: "Glided Blush", price: 649, src: glidedBlush },
+  { label: "Golden Outline", price: 599, src: goldenOutline },
+  { label: "Studded Petals", price: 699, src: studdedPetals },
+  { label: "Heart Me Black", price: 699, src: heartMeBlack },
 ];
 
 const BESTSELLERS = [
@@ -75,7 +75,7 @@ export default function SolidHues({ preview = false, onViewAll }) {
       <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6`}>
         {displayDesigns.map((item, i) => {
           const isBestseller = BESTSELLERS.includes(
-            item.label.trim().toLowerCase()
+            item.label.trim().toLowerCase(),
           );
           return (
             <div key={i} className="flex flex-col items-center text-center">

@@ -16,16 +16,16 @@ import starryPink from "../Cateye Canvas/starry pink cateye.499_-.111.png";
 
 // 💫 Cateye Canvas with Prices
 const designs = [
-  { label: "Champagne Gaze", src: champagneGaze, price: 499 },
-  { label: "Midnight Cateye", src: midnightCateye, price: 499 },
-  { label: "Starry Pink Cateye", src: starryPink, price: 499 },
-  { label: "Burgundy Bow", src: burgundyBow, price: 599 },
-  { label: "Crimson Cateye", src: crimsonCateye, price: 649 },
-  { label: "Cosmic Curves", src: cosmicCurves, price: 699 },
-  { label: "Mystic Butterfly", src: mysticButterfly, price: 699 },
-  { label: "Rose Quartz Cateye", src: roseQuartz, price: 699 },
-  { label: "Frame Cateye", src: frameCateye, price: 699 },
-  { label: "Glided Pearl", src: glidedPearl, price: 749 },
+  { label: "Champagne Gaze", src: champagneGaze, price: 599 },
+  { label: "Midnight Cateye", src: midnightCateye, price: 599 },
+  { label: "Starry Pink Cateye", src: starryPink, price: 599 },
+  { label: "Burgundy Bow", src: burgundyBow, price: 699 },
+  { label: "Crimson Cateye", src: crimsonCateye, price: 749 },
+  { label: "Cosmic Curves", src: cosmicCurves, price: 799 },
+  { label: "Mystic Butterfly", src: mysticButterfly, price: 799 },
+  { label: "Rose Quartz Cateye", src: roseQuartz, price: 799 },
+  { label: "Frame Cateye", src: frameCateye, price: 799 },
+  { label: "Glided Pearl", src: glidedPearl, price: 849 },
 ];
 
 // 🎨 Sort by price low to high
@@ -87,7 +87,7 @@ export default function CateyeCanvas() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
           {sortedDesigns.map((item, i) => {
             const isBestseller = BESTSELLERS.includes(
-              item.label.trim().toLowerCase()
+              item.label.trim().toLowerCase(),
             );
             return (
               <div key={i} className="flex flex-col items-center text-center">

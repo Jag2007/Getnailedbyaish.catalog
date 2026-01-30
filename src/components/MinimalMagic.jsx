@@ -40,10 +40,10 @@ const BESTSELLERS = [
 ];
 
 const designs = [
-  { label: "Holographic Ombre", price: 399, src: holographicOmbre }, // replaced Bridal Bow
-  { label: "Golden Fusion", price: 499, src: goldenFusion },
-  { label: "Soft Sparkle", price: 499, src: softSparkle },
-  { label: "Crystal Tips", price: 599, src: crystalTips },
+  { label: "Holographic Ombre", price: 499, src: holographicOmbre }, // replaced Bridal Bow
+  { label: "Golden Fusion", price: 599, src: goldenFusion },
+  { label: "Soft Sparkle", price: 599, src: softSparkle },
+  { label: "Crystal Tips", price: 699, src: crystalTips },
 ];
 
 export default function MinimalMagicPreview({ preview = true, onViewAll }) {
@@ -76,7 +76,7 @@ export default function MinimalMagicPreview({ preview = true, onViewAll }) {
       <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6`}>
         {displayDesigns.map((item, i) => {
           const isBestseller = BESTSELLERS.includes(
-            item.label.trim().toLowerCase()
+            item.label.trim().toLowerCase(),
           );
           return (
             <div key={i} className="flex flex-col items-center text-center">

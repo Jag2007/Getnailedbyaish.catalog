@@ -32,34 +32,34 @@ import blackPearlBow from "../Bow Bubbly/black pearl bow.749_-.116.png";
 
 // 🎀 Designs Array
 const designs = [
-  { label: "Formal Bow", price: 329, src: formalBow },
-  { label: "Bow-tiful Nude", price: 329, src: bowTifulNude },
-  { label: "Dotted Bow Charm", price: 379, src: dottedBowCharm },
-  { label: "Serene Bow", price: 349, src: sereneBow },
-  { label: "Classic French Bow", price: 479, src: classicFrenchBow },
-  { label: "Soft Pink Bow", price: 479, src: softPinkBow },
-  { label: "Rose Gold Bow", price: 499, src: roseGoldBow },
-  { label: "First Kiss Bow", price: 499, src: firstKissBow },
-  { label: "Girly Bow French", price: 499, src: girlyBowFrench },
-  { label: "Elegant Ruby Bow", price: 449, src: elegantRubyBow },
-  { label: "Belle Fleur", price: 449, src: belleFleur },
-  { label: "Glitter Bows", price: 549, src: glitterBows },
-  { label: "Bow and Star Light", price: 549, src: bowAndStarLight },
-  { label: "Princess Bow Glitter", price: 549, src: princessBowGlitter },
-  { label: "Princess Bow French", price: 549, src: princessBowFrench },
-  { label: "French Bow Kiss", price: 479, src: frenchBowKiss },
-  { label: "Dreamy Bows", price: 649, src: dreamyBows },
-  { label: "Blush Bow and Pearl", price: 579, src: blushBowAndPearl },
-  { label: "Iridescent Bows", price: 599, src: iridescentBows },
-  { label: "Love and Lite Bow", price: 599, src: loveAndLiteBow },
-  { label: "Soft Ribbon French", price: 599, src: softRibbonFrench },
-  { label: "Star and Bow", price: 599, src: starAndBow },
-  { label: "Twinkle Bow", price: 649, src: twinkleBow },
-  { label: "Moonlit Pearl Bow", price: 699, src: moonlitPearlBow },
-  { label: "Glided Bow Tips", price: 699, src: glidedBowTips },
-  { label: "Heartfelt Charms", price: 649, src: heartfeltCharms },
-  { label: "Fairy Tale", price: 649, src: fairyTale },
-  { label: "Black Pearl Bow", price: 749, src: blackPearlBow },
+  { label: "Formal Bow", price: 429, src: formalBow },
+  { label: "Bow-tiful Nude", price: 429, src: bowTifulNude },
+  { label: "Dotted Bow Charm", price: 479, src: dottedBowCharm },
+  { label: "Serene Bow", price: 449, src: sereneBow },
+  { label: "Classic French Bow", price: 579, src: classicFrenchBow },
+  { label: "Soft Pink Bow", price: 579, src: softPinkBow },
+  { label: "Rose Gold Bow", price: 599, src: roseGoldBow },
+  { label: "First Kiss Bow", price: 599, src: firstKissBow },
+  { label: "Girly Bow French", price: 599, src: girlyBowFrench },
+  { label: "Elegant Ruby Bow", price: 549, src: elegantRubyBow },
+  { label: "Belle Fleur", price: 549, src: belleFleur },
+  { label: "Glitter Bows", price: 649, src: glitterBows },
+  { label: "Bow and Star Light", price: 649, src: bowAndStarLight },
+  { label: "Princess Bow Glitter", price: 649, src: princessBowGlitter },
+  { label: "Princess Bow French", price: 649, src: princessBowFrench },
+  { label: "French Bow Kiss", price: 579, src: frenchBowKiss },
+  { label: "Dreamy Bows", price: 749, src: dreamyBows },
+  { label: "Blush Bow and Pearl", price: 679, src: blushBowAndPearl },
+  { label: "Iridescent Bows", price: 699, src: iridescentBows },
+  { label: "Love and Lite Bow", price: 699, src: loveAndLiteBow },
+  { label: "Soft Ribbon French", price: 699, src: softRibbonFrench },
+  { label: "Star and Bow", price: 699, src: starAndBow },
+  { label: "Twinkle Bow", price: 749, src: twinkleBow },
+  { label: "Moonlit Pearl Bow", price: 799, src: moonlitPearlBow },
+  { label: "Glided Bow Tips", price: 799, src: glidedBowTips },
+  { label: "Heartfelt Charms", price: 749, src: heartfeltCharms },
+  { label: "Fairy Tale", price: 749, src: fairyTale },
+  { label: "Black Pearl Bow", price: 849, src: blackPearlBow },
 ];
 
 // 🧠 Sort by price (low to high)
@@ -119,7 +119,7 @@ export default function BowBubbly50() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
           {sortedDesigns.map((item, i) => {
             const isBestseller = BESTSELLERS.includes(
-              item.label.trim().toLowerCase()
+              item.label.trim().toLowerCase(),
             );
             return (
               <div key={i} className="flex flex-col items-center text-center">

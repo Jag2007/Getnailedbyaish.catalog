@@ -40,10 +40,10 @@ const BESTSELLERS = [
 ];
 
 const designs = [
-  { label: "Champagne Gaze", price: 499, src: champagneGaze },
-  { label: "Burgundy Bow", price: 599, src: burgundyBow },
-  { label: "Cosmic Curves", price: 699, src: cosmicCurves },
-  { label: "Starry Pink Cateye", price: 499, src: starryPink }, // replaced Glided Pearl
+  { label: "Champagne Gaze", price: 599, src: champagneGaze },
+  { label: "Burgundy Bow", price: 699, src: burgundyBow },
+  { label: "Cosmic Curves", price: 799, src: cosmicCurves },
+  { label: "Starry Pink Cateye", price: 599, src: starryPink }, // replaced Glided Pearl
 ];
 
 export default function CateyeCanvasPreview({ preview = true, onViewAll }) {
@@ -76,7 +76,7 @@ export default function CateyeCanvasPreview({ preview = true, onViewAll }) {
       <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6`}>
         {displayDesigns.map((item, i) => {
           const isBestseller = BESTSELLERS.includes(
-            item.label.trim().toLowerCase()
+            item.label.trim().toLowerCase(),
           );
           return (
             <div key={i} className="flex flex-col items-center text-center">
